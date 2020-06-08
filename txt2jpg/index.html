@@ -4,6 +4,7 @@
         window.onload = function() {
             var param = location.search.replace("?txt=", "");
             param = decodeURI(param);
+            param = param.replace(/\n/g, "<br>");
             var canvas = document.getElementById("canvas");
             var ctx = canvas.getContext("2d");
             ctx.font = "40px monospace";
