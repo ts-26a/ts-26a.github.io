@@ -20,9 +20,12 @@
             }
             var hiddenp = document.getElementById("hiddenp");
             hiddenp.innerHTML = canvas.toDataURL("image/jpeg");
+
             functioin getPath() {
                 return canvas.toDataURL("image/jpeg");
             }
+            var img = document.getElementById("img");
+            img.setAttribute("src", getPath());
         }
     </script>
     <head>
@@ -35,6 +38,6 @@
             <canvas id="canvas" width="1000" height="1000" hidden>
             </canvas>
         </div>
-        <img id="img" src="aieo" onload="this.onload=null; this.src=getPath();" />
+        <img id="img" />
     </body>
 </html>
