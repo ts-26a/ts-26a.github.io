@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="ja">
     <script type="text/javascript">
+        var canvas = document.getElementById("canvas");
         window.onload = function() {
             var param = location.search.replace("?txt=", "");
             param = decodeURI(param);
             var lines = param.split("\n");
-            var canvas = document.getElementById("canvas");
             var ctx = canvas.getContext("2d");
             ctx.fillStyle="#c0c0c0";
             ctx.fillRect(0, 0, 1000, 1000);
@@ -20,6 +20,9 @@
             }
             var hiddenp = document.getElementById("hiddenp");
             hiddenp.innerHTML = canvas.toDataURL("image/jpeg");
+            functioin getPath() {
+                return canvas.toDataURL("image/jpeg");
+            }
         }
     </script>
     <head>
@@ -29,9 +32,9 @@
     </head>
     <body>
         <div id="canvas_w">
-            <canvas id="canvas" width="1000" height="1000">
+            <canvas id="canvas" width="1000" height="1000" hidden>
             </canvas>
         </div>
-        <p id="hiddenp"></p>
+        <img id="img" src="aieo" onload="this.onload=null; this.src=getPath();" />
     </body>
 </html>
