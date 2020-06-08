@@ -4,6 +4,7 @@
         window.onload = function() {
             var canvas = document.getElementById("canvas");
             var param = location.search.replace("?txt=", "");
+            param = param.replace(/%40/g, "@");
             param = decodeURI(param);
             var lines = param.split("\n");
             var ctx = canvas.getContext("2d");
