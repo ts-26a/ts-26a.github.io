@@ -3,6 +3,7 @@
     <script type="text/javascript">
         window.onload = function() {
             var param = location.search.replace("?txt=", "");
+            param = decodeURI(param);
             var canvas = document.getElementById("canvas");
             var ctx = canvas.getContext("2d");
             ctx.font = "40px monospace";
