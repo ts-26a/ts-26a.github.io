@@ -16,7 +16,8 @@
             line_len = lines.length;
             for (var i = 0; i < line_len; i++) {
                 line = lines[i];
-                ctx.fillText(line, 300, 60 * (i + 1));
+                // 690 -> 750 -> 810
+                ctx.fillText(line, i == 0 ? 690 : (i == 1 ? 750 : 810));
             }
         }
     </script>
@@ -26,7 +27,7 @@
         <title>txt2jpg</title>
     </head>
     <body>
-        <canvas id="canvas" width="600" height="1000">
+        <canvas id="canvas" width="750" height="750">
         </canvas>
     </body>
 </html>
