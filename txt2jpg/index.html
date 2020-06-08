@@ -10,13 +10,13 @@
             ctx.fillStyle="#c0c0c0";
             ctx.fillRect(0, 0, 1000, 1000);
             ctx.fillStyle = "#000000";
-            ctx.font = "40px monospace";
+            ctx.font = "50px monospace";
             ctx.textAlign = "center";
             var line;
             line_len = lines.length;
             for (var i = 0; i < line_len; i++) {
                 line = lines[i];
-                ctx.fillText(line, 500, 40 * (i + 1));
+                ctx.fillText(line, 500, 60 * (i + 1));
             }
         }
     </script>
@@ -26,7 +26,7 @@
         <title>txt2jpg</title>
     </head>
     <body>
-        <canvas id="canvas" width="1000" height="1000">
+        <canvas id="canvas" width="600" height="1000">
         </canvas>
     </body>
 </html>
