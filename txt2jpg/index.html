@@ -3,6 +3,7 @@
     <script type="text/javascript">
         window.onload = function() {
             var param = location.search.replace("?txt=", "");
+            param = decodeURI(param);
             var lines = param.split("\n");
             var canvas = document.getElementById("canvas");
             var ctx = canvas.getContext("2d");
@@ -12,7 +13,6 @@
             line_len = lines.length;
             for (var i = 0; i < line_len; i++) {
                 line = lines[i];
-                line = decodeURI(line);
                 ctx.fillText(line, 500, 40 * (i + 1));
             }
             var hiddenp = document.getElementById("hiddenp");
