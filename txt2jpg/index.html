@@ -1,5 +1,11 @@
 <!doctype html>
 <html lang="ja">
+    <style>
+        #canvas {
+            background-color: #1e1e1e;
+            color           : black;
+        }
+    </style>
     <script type="text/javascript">
         window.onload = function() {
             var param = location.search.replace("?txt=", "");
@@ -26,7 +32,8 @@
     </head>
     <body>
         <div id="canvas_w">
-            <canvas id="canvas" width="1000" height="1000"></canvas>
+            <canvas id="canvas" width="1000" height="1000">
+            </canvas>
         </div>
         <p id="hiddenp"></p>
     </body>
