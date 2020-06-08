@@ -1,11 +1,5 @@
 <!doctype html>
 <html lang="ja">
-    <style>
-        #canvas {
-            background-color: #c0c0c0;
-            color           : black;
-        }
-    </style>
     <script type="text/javascript">
         window.onload = function() {
             var param = location.search.replace("?txt=", "");
@@ -13,6 +7,9 @@
             var lines = param.split("\n");
             var canvas = document.getElementById("canvas");
             var ctx = canvas.getContext("2d");
+            ctx.fillStyle="#c0c0c0";
+            ctx.fillRect(0, 0, 1000, 1000);
+            ctx.fillStyle = black;
             ctx.font = "40px monospace";
             ctx.textAlign = "center";
             var line;
