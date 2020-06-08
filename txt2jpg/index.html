@@ -18,14 +18,6 @@
                 line = lines[i];
                 ctx.fillText(line, 500, 40 * (i + 1));
             }
-            var hiddenp = document.getElementById("hiddenp");
-            hiddenp.innerHTML = canvas.toDataURL("image/jpeg");
-
-            function getPath() {
-                return canvas.toDataURL("image/jpeg");
-            }
-            var img = document.getElementById("img");
-            img.setAttribute("src", getPath());
         }
     </script>
     <head>
@@ -34,10 +26,7 @@
         <title>txt2jpg</title>
     </head>
     <body>
-        <div id="canvas_w" hidden>
-            <canvas id="canvas" width="1000" height="1000">
-            </canvas>
-        </div>
-        <img id="img" />
+        <canvas id="canvas" width="1000" height="1000">
+        </canvas>
     </body>
 </html>
