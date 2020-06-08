@@ -4,12 +4,17 @@
         window.onload = function() {
             var param = location.search.replace("?txt=", "");
             param = decodeURI(param);
-            param = param.replace(/\n/g, "<br>");
+            var lines = param.split("\n");
             var canvas = document.getElementById("canvas");
             var ctx = canvas.getContext("2d");
             ctx.font = "40px monospace";
             ctx.textAlign = "center";
-            ctx.fillText(param, 300, 300);
+            var line;
+            line_len = lines.length;
+            for (var i = 0; i < line_len; i++) {
+                line = lines[i];
+                ctx.fillText(line, 500, 40 * (i + 1));
+            }
             var hiddenp = document.getElementById("hiddenp");
             hiddenp.innerHTML = canvas.toDataURL();
         }
@@ -21,7 +26,7 @@
     </head>
     <body>
         <div id="canvas_w">
-            <canvas id="canvas" width="600" height="600"></canvas>
+            <canvas id="canvas" width="1000" height="1000"></canvas>
         </div>
         <p id="hiddenp"></p>
     </body>
