@@ -5,7 +5,9 @@
             function onClick() {
                 const baseUrl = "https://script.google.com/macros/s/AKfycbxUFzmeyOaerPo4MA2NOA1kzx8fKaJFsuVV6ji9nwDQyhV9A-iY/exec";
                 const url = baseUrl + "?input=" + document.forms.sc_n.screen_name.value;
-                const res = (await fetch(url)).json();
+                const res = fetch(url).json();
+                const div = document.getElementById("div_id");
+                div.removeAttribute("hidden");
                 const rank = document.getElementById("rank_id");
                 const rate = document.getElementById("rate_id");
                 rank.innerHTML = res["rank"];
@@ -21,7 +23,9 @@
             <label>Your account id: <input type="text" method="post" name="screen_name" /></label>
             <input type="button" value="submit" onclick="onClick();" />
         </form>
-        <label>Your rank: <span id="rank_id"></span></label>
-        <label>Your rate: <span id="rate_id"></span></label>
+        <div id="div_id" hidden>
+            <label>Your rank: <span id="rank_id"></span></label>
+            <label>Your rate: <span id="rate_id"></span></label>
+        </div>
     </body>
 </html>
