@@ -2,7 +2,7 @@
 <html lang="ja">
     <head>
         <script>
-            function onClick() {
+            async function onClick() {
                 const baseUrl = "https://script.google.com/macros/s/AKfycbxUFzmeyOaerPo4MA2NOA1kzx8fKaJFsuVV6ji9nwDQyhV9A-iY/exec";
                 const url = baseUrl + "?input=" + document.forms.sc_n.screen_name.value;
                 const _res = await fetch(url);
