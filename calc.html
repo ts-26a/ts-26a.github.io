@@ -1,31 +1,33 @@
-<!doctype html>
-<html lang="ja">
+<html>
     <head>
         <meta charset="utf-8">
-        <title>How to calculate the rate</title>
+        <title>Rate</title>
+        <style>
+            p {
+                line-height: 0.5em;
+            }
+        </style>
     </head>
     <body>
-        <h1 id="rate算出方法">Rate算出方法</h1>
-        <p>Rateの算出方法です。<br />
-            だいたいは<a href="https://sites.google.com/site/334rankermanual/calcworldranking">これ</a>に沿ってますが一部違うので。</p>
-        <h2 id="位の得点を約32として順位に反比例した得点を付ける">[1] 1位の得点を約32として順位に反比例した得点を付ける</h2>
-        <p>得点Pの計算式は順位をrとして<br />
-            <img src="./img/calc1.png" alt="P" /><br />
-            になります。</p>
-        <h2 id="参加日数に応じて減衰させる">[2] 参加日数に応じて減衰させる</h2>
-        <p>ここが334の計算と一番違うかなーって思います。<br />
-            そもそもティータイム集計botの場合、<br />
-            spreadsheetかGoogleDriveにしかデータを保存できないため、(本当はもう一個あるけどうごかない)<br />
-            そこのでのデータのやり取りで時間がかかってしまわないようこんな感じになってます。<br />
-            減衰後の得点<img src="./img/calc2.png" alt="P’" />は<br />
-            <img src="./img/calc3.png" alt="P’" /><br />
-            となります。</p>
-        <h2 id="得点の平均をとるただし試合数が規定に達していない者については試合数を10として平均をとる">[3] 得点の平均をとる(ただし試合数が規定に達していない者については試合数を10として平均をとる)</h2>
-        <p>まあ普通に。</p>
-        <h2 id="得点順にsortする">[4] 得点順にsortする</h2>
-        <p>まあ普通に。</p>
-        <br>
-        <br>
-        <p><a href="./index.html">Home</a></p>
+        <h1>Rate算出方法</h1>
+            <p>Rateの算出方法です。</p>
+            <p>だいたいは<a href="https://sites.google.com/site/334rankermanual/calcworldranking">これ</a>に沿ってますが一部違うので。</p>
+        <h2>[1] 1位の得点を約32として順位に反比例した得点を付ける</h2>
+            <p>得点</p>
+            <p><em>P</em>の計算式は順位を<em>r</em>として</p>
+            <p><i><em>P</em> = 34.46 ÷ <em>r</em><sup>0.913</sup></i></p>
+            <p>になります。</p>
+        <h2>[2] 参加日数に応じて減衰させる</h2>
+            <p>ここが334の計算と一番違うかなーって思います。</p>
+            <p>そもそもティータイム集計botの場合、</p>
+            <p>spreadsheetかGoogleDriveにしかデータを保存できないため、(本当はもう一個あるけどうごかない)</p>
+            <p>そこのでのデータのやり取りで時間がかかってしまわないようこんな感じになってます。</p>
+            <p>減衰後の得点<em>P</em><sup>′</sup>は</p>
+            <p><i><em>P</em><sup>′</sup> = <em>P</em> × (1 − (<em>r</em> − 12) ÷ 92)    (1 ≤ <em>r</em> ≤ 12)</i></p>
+            <p>となります。</p>
+        <h2>[3] 得点の平均をとる(ただし試合数が規定に達していない者については試合数を10として平均をとる)</h2>
+            <p>まあ普通に。</p>
+        <h2>[4] 得点順にsortする</h2>
+            <p>まあ普通に。</p>
     </body>
 </html>
