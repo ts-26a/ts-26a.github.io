@@ -6,17 +6,25 @@
         <link rel="stylesheet" href="css/font.css">
         <style>
             p {
-                line-height: 0.5em;
+                /*line-height: 0.5em;*/
             }
         </style>
+        <script>
+            var ptags = document.getElementsByTagName("p");
+            var isSmartPhone = window.matchMedia && window.matchMedia('(max-device-width: 640px)').matches;
+            console.log(isSmartPhone);
+            var pstyle = isSmartPhone ? "line-height: 0.75em;" : "line-height: 0.3em;";
+            Array.prototype.forEach.call(ptags, function (item){
+                item.setAttribute("style", pstyle);
+            });
+        </script>
     </head>
     <body>
         <h1>Rate算出方法</h1>
             <p>Rateの算出方法です。</p>
             <p>だいたいは<a href="https://sites.google.com/site/334rankermanual/calcworldranking">これ</a>に沿ってますが一部違うので。</p>
         <h2>[1] 1位の得点を約32として順位に反比例した得点を付ける</h2>
-            <p>得点</p>
-            <p><em>P</em>の計算式は順位を<em>r</em>として</p>
+            <p>得点<em>P</em>の計算式は順位を<em>r</em>として</p>
             <p><i><em>P</em> = 34.46 ÷ <em>r</em><sup>0.913</sup></i></p>
             <p>になります。</p>
         <h2>[2] 参加日数に応じて減衰させる</h2>
