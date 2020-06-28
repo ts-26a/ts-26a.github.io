@@ -6,7 +6,12 @@
         <script>
             async function onClick() {
                 const baseUrl = "https://script.google.com/macros/s/AKfycbxUFzmeyOaerPo4MA2NOA1kzx8fKaJFsuVV6ji9nwDQyhV9A-iY/exec";
-                const url = baseUrl + "?input=" + document.forms.sc_n.screen_name.value;
+                const _screen_name = forms.sc_n.screen_name.value;
+                if (_screen_name.match(/@?[a-zA-Z0-9_]+/) === null) {
+                    alert("Invalid id");
+                }
+                const screen_name = _screen_name.replace("@", "");
+                const url = baseUrl + "?input=" + screen_name;
                 const _res = await fetch(url);
                 const res = await _res.json();
                 const div = document.getElementById("div_id");
