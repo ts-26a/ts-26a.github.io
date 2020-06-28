@@ -10,6 +10,7 @@
                 if (_screen_name.match(/@?[a-zA-Z0-9_]+/) === null
                         || _screen_name.includes(" ")) {
                     alert("Invalid id");
+                    return;
                 }
                 const screen_name = _screen_name.replace("@", "");
                 const url = baseUrl + "?input=" + screen_name;
