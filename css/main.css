@@ -5,5 +5,11 @@
 
 * {
     font-family: Cica;
-    font-size: 1.03em;
+}
+
+h1 {
+    font-suze: 1.06px;
+}
+ul, li {
+    font-size: 1.01em;
 }
