@@ -1,14 +1,10 @@
-@font-face {
-    src: url('../font/Cica.ttf') format('truetype');
-    font-family: Cica;
-}
-
 * {
-    font-family: Cica;
+    font-family: 'Ubuntu Mono','M PLUS Rounded 1c';
+    font-size: 1.02em;
 }
 
 h1 {
-    font-suze: 1.06px;
+    font-size: 2.06em;
 }
 ul, li {
     font-size: 1.01em;
